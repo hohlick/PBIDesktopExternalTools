@@ -13,6 +13,10 @@ To avoid manual seeking for the current port and editing connection settings, yo
 
 Then you can simple refresh connection in Excel file and continue to use it.
 
+## References
+* This project was inspired by Erik Svensen' tool https://github.com/donsvensen/erikspbiexcelconnector, which is described in [his blog post](https://eriksvensen.com/2020/07/27/powerbi-external-tool-to-connect-excel-to-the-current-pbix-file/).
+* Used code from https://github.com/DevScope/powerbi-powershell-modules and [PowerShell module](https://www.powershellgallery.com/packages/PowerBIPS.Tools/1.0.2.2) by Rui Romano and [his blog post](https://ruiromanoblog.wordpress.com/2018/10/20/analyse-in-excel-power-bi-desktop/)
+
 ## Installation
 ### Default installation
 You need to download two files: `CreateODCFromPBIET.ps1` and `MZExcelLink.pbitool.json` from repository. By default the new ODC files will be created in `C:\Temp`
@@ -77,3 +81,4 @@ If you need to interrupt your work, you can close your saved Excel file and PBIX
 * If you open saved Excel file and try to refresh connection when corresponding PBIX file is **not opened** in Power BI Desktop, you'll get an error.
 * If you open saved Excel file and try to refresh connection when corresponding PBIX file is **opened** in Power BI Desktop, but you didn't run the "Create ODC" External Tool, you'll get an error.
 * This External Tool provided AS-IS. Use it on your own risk
+* Contributions are welcomed
