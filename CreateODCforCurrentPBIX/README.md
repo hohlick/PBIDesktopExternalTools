@@ -21,11 +21,13 @@ You need to download two files: `CreateODCFromPBIET.ps1` and `MZExcelLink.pbitoo
 
 ### Change ODC files path 
 
-To set the desired folder path for the ODC files, open ```CreateODCFromPBIET.ps1``` in any text editor and change desired path at the end of the last line of this file:
+To set the desired folder path for the ODC files, open ```CreateODCFromPBIET.ps1``` in any text editor and change desired path at the end of the **LAST LINE** of this file:
  
 `MZ-PBIDesktopODC -server $args[0] -path "C:\Temp"`
 
 You can change `C:\Temp` to any desired path where you want to save ODC files
+
+![Where to change path to save ODC files](docs/PathToODC.png)
 
 ### Change script path
 
@@ -34,6 +36,8 @@ Open `MZExcelLink.pbitool.json` in any text editor and in the `arguments` sectio
 `"arguments": "C:/temp/CreateODCFromPBIET.ps1 \"%server%\" \"%database%\"",`
 
 Please use `/` instead of `\` in the path string. Do not change the rest of this line!
+
+![Where to change path to the script](docs/PathToScript.png)
 
 ### Allow PowerShell scripts
 You may need to allow PowerShell scripts on your PC. To do this, you need to set appropriate PowerShell policy accroding to [this article](https://docs.microsoft.com/en-gb/powershell/module/microsoft.powershell.core/about/about_execution_policies).
@@ -45,9 +49,18 @@ You may need to allow PowerShell scripts on your PC. To do this, you need to set
 1. Open PBIX file in the Power BI Desktop (you may need to reopen it if file was opened during tool installation)
 2. On the External Tool ribbon, press "Create ODC" button. ODC file will be created in `C:\Temp` (or in the other folder, if you changed it) with the name of PBIX file
 3. Double-click ODC file to open it in Excel.
-4. In Excel, confirm opening the file.
-5. In Excel, go to Data -> Existing Connections, right-click on the connection name and select "Change"
-6. On the Definition tab, set "Always use file".
+4. In Excel, confirm opening the file and start creating your pivot tables.
+
+To make this connection semi-stable:
+
+5. In Excel, go to Data -> Existing Connections (or Queries & Connections), right-click on the connection name and select "Change"
+
+![Where to find the new connection](docs/ExcelSettings1.jpg)
+
+6. On the *`Definition`* tab of *`Connection Properties`* window, check "Always use connection file".
+
+![Where to set connection to work from ODC](docs/ExcelSettings2.jpg)
+
 7. Save the Excel file.
 
 Now you can continue your work in Excel file, connected to the current instance of Power BI Desktop. Connection will keep until you close PBIX file and/or Power BI Desktop.
