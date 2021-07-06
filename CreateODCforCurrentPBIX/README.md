@@ -2,16 +2,11 @@
 
 ## Purpose
 
-This External Tool allows you to create OR update an ODC (Office Data Connection) file for currently opened PBIX file. 
-ODC file will be created with the name of the PBIX file and will contain the server address and port, provided by Power BI Desktop External Tools feature.
+This External Tool allows you to create OR update an ODC (Office Data Connection) file for the currently opened PBIX file. ODC file will be created with the name of the PBIX file and will contain the server address and port, provided by Power BI Desktop External Tools feature. You then can open this ODC file in Excel and build pivot tables for testing your model.
 
-You then can open this ODC fie in Excel and build pivot tables for testing your model.
+Basically, when you close and re-open the PBIX file in the Power BI Desktop, a new port will be assigned to the current instance. So, if you want to continue to use the previously created Excel file with connection to the same PBIX, you need to change the port in connection settings.
 
-Basically, when you close and re-open PBIX file in the Power BI Desktop, new port will be assigned to the current instance. So, if you want to continue to use previously created Excel file with connection to the same PBIX, you need to change port in connection settings.
-
-To avoid manual seeking for the current port and editing connection settings, you just need to run this External Tool again to overwrite existing ODC for this PBIX with the new server address.
-
-Then you can simple refresh connection in Excel file and continue to use it.
+To avoid manual seeking for the current port and editing connection settings, you just need to run this External Tool again to overwrite the existing ODC for this PBIX with the new server address. Then you can simply refresh the connection in the Excel file and continue to use it.
 
 ## References
 * This project was inspired by Erik Svensen' tool https://github.com/donsvensen/erikspbiexcelconnector, which is described in [his blog post](https://eriksvensen.com/2020/07/27/powerbi-external-tool-to-connect-excel-to-the-current-pbix-file/).
